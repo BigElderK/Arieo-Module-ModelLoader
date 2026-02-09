@@ -5,19 +5,19 @@ project(ArieoEngine)
 
     arieo_engine_project(
         arieo_model_loader_module
-        ALIAS arieo::modules::model_loader
         PROJECT_TYPE module
-        SOURCES
-            ${CMAKE_CURRENT_SOURCE_DIR}/private/src/*.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/private/src/*/*.cpp
-        INTERFACES
-            Arieo-Interface-FileLoader::arieo_file_loader_interface
+
         PACKAGES
             Arieo-Interface-FileLoader
             tinyobjloader
             Arieo-Core
+        INTERFACES
+            Arieo-Interface-FileLoader::arieo_file_loader_interface
         PRIVATE_LIBS
-            arieo::base
-            arieo::core
+            Arieo-Core::arieo_core
             tinyobjloader::tinyobjloader
+
+        SOURCES
+            ${CMAKE_CURRENT_SOURCE_DIR}/private/src/*.cpp
+            ${CMAKE_CURRENT_SOURCE_DIR}/private/src/*/*.cpp
     )
