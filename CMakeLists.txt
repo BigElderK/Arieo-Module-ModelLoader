@@ -13,7 +13,9 @@ project(ArieoEngine)
         INTERFACES
             Arieo-Interface-FileLoader::arieo_file_loader_interface
         PACKAGES
+            Arieo-Interface-FileLoader
             tinyobjloader
+            Arieo-Core
         PRIVATE_LIBS
             arieo::base
             arieo::core
