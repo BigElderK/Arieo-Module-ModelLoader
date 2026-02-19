@@ -8,10 +8,11 @@ arieo_engine_project(
     PROJECT_TYPE module
 
     DEPENDENCIES
-        PACKAGES
-            Arieo-Interface-FileLoader
-            tinyobjloader
+        ARIEO_PACKAGES
             Arieo-Core
+            Arieo-Interface-FileLoader
+        THIRDPARTY_PACKAGES
+            tinyobjloader
         INTERFACES
             Arieo-Interface-FileLoader::arieo_file_loader_interface
         PRIVATE_LIBS
@@ -20,6 +21,6 @@ arieo_engine_project(
 
     SOURCES
         CXX_SOURCES
-            ${CMAKE_CURRENT_SOURCE_DIR}/private/src/*.cpp
-            ${CMAKE_CURRENT_SOURCE_DIR}/private/src/*/*.cpp
+            ${CMAKE_CURRENT_LIST_DIR}/private/src/*.cpp
+            ${CMAKE_CURRENT_LIST_DIR}/private/src/*/*.cpp
 )
